@@ -22,6 +22,3 @@ elsif(RUBY_PLATFORM =~ /mswin32/ || RUBY_PLATFORM =~ /mingw32/ )
 else
         require 'ibm_db.so'
 end
-
-# require 'active_record'
-# require 'active_record/connection_adapters/ibm_db_adapter'
