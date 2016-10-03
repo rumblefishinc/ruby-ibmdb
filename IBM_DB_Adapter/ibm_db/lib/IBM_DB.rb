@@ -23,5 +23,5 @@ else
         require 'ibm_db.so'
 end
 
-require 'active_record'
-require 'active_record/connection_adapters/ibm_db_adapter'
+# require 'active_record'
+# require 'active_record/connection_adapters/ibm_db_adapter'
