@@ -47,8 +47,8 @@ SPEC = Gem::Specification.new do |spec|
     if drv_lib.file? #&& (require "#{drv_lib.to_s}") #Commenting condition check as Ruby-1.9 does not recognize files from local directory
       puts ".. ibm_db driver was found:   #{drv_lib.realpath}"
     else
-      puts ".. ibm_db driver binary was not found. The driver native extension to be built during install."	  
-		spec.extensions << 'ext/extconf.rb'	  
+      puts ".. ibm_db driver binary was not found. The driver native extension to be built during install."
+		spec.extensions << 'ext/extconf.rb'
     end
   end
 
@@ -63,4 +63,4 @@ if $0 == __FILE__
   Gem::Builder.new(spec).build
 end
 
-return SPEC
+SPEC
