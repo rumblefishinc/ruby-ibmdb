@@ -4,6 +4,7 @@ require 'open-uri'
 require 'rubygems/package'
 require 'zlib'
 require 'fileutils'
+require 'pathname'
 
 # +----------------------------------------------------------------------+
 # |  Licensed Materials - Property of IBM                                |
