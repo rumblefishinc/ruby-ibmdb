@@ -4,7 +4,6 @@ require 'open-uri'
 require 'rubygems/package'
 require 'zlib'
 require 'fileutils'
-require 'pry'
 
 # +----------------------------------------------------------------------+
 # |  Licensed Materials - Property of IBM                                |
