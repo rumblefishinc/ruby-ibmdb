@@ -1,0 +1,11 @@
+.env
+.rspec
+.DS_Store
+/.bundle/
+/Gemfile.lock
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/.vagrant/

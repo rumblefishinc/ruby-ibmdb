@@ -1,0 +1,31 @@
+AllCops:
+  Exclude:
+    - 'api/vendor/**/*'
+    - 'solr/vendor/**/*'
+    - 'vendor/**/*'
+  TargetRubyVersion: 2.3
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Max: 500
+
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: aligned
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
