@@ -14,6 +14,8 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.0.0'
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'pry'
+  spec.test_file = 'test/ibm_db_test.rb'
+
   candidates = Dir.glob('**/*')
   spec.files = candidates.delete_if do |item|
     item.include?('CVS') ||
@@ -31,18 +33,6 @@ Gem::Specification.new do |spec|
     spec.add_dependency('archive-zip', '>= 0.7.0')
   else
     spec.files = candidates.delete_if { |item| item.include?('lib/mswin32') }
-    # Check for the pre-built IBM_DB driver for this platform: #{RUBY_PLATFORM}
-    # find ibm_db driver path
-    drv_path = Pathname.new(File.dirname(__FILE__)) + 'lib'
-    # Locate ibm_db driver path: #{drv_path.realpath}
-    drv_lib = drv_path + 'ibm_db.so'
-    if drv_lib.file?
-      # ibm_db driver was found:   #{drv_lib.realpath}
-    else
-      # ibm_db driver binary was not found. The driver native extension to be built during install.
-      spec.extensions << 'ext/extconf.rb'
-    end
+    spec.extensions << 'ext/extconf.rb'
   end
-
-  spec.test_file = 'test/ibm_db_test.rb'
 end
