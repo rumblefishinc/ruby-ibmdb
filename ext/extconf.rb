@@ -12,8 +12,6 @@ require 'pathname'
 # | (C) Copyright IBM Corporation 2006 - 2016                            |
 # +----------------------------------------------------------------------+
 
-TAR_LONGLINK = '././@LongLink'
-
 WIN = RUBY_PLATFORM =~ /mswin/ || RUBY_PLATFORM =~ /mingw/
 
 # use ENV['IBM_DB_HOME'] or latest db2 you can find
@@ -138,6 +136,7 @@ if ibm_db_home.nil? || ibm_db_home == ''
 
       archive = download_cli_package(destination, downloadlink)
       untar_cli_package(archive, destination)
+      FileUtils.rm_rf(archive)
 
       ibm_db_home = "#{destination}/clidriver"
       ibm_db_include = "#{ibm_db_home}/include"
