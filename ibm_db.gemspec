@@ -20,10 +20,8 @@ Gem::Specification.new do |spec|
   spec.files = candidates.delete_if do |item|
     item.include?('CVS') ||
       item.include?('rdoc') ||
-      item.include?('install.rb') ||
-      item.include?('uninstall.rb') ||
       item.include?('Rakefile') ||
-      item.include?('IBM_DB.gemspec') ||
+      item.include?('ibm_db.gemspec') ||
       item.include?('.gem') ||
       item.include?('ibm_db_mswin32.rb')
   end
@@ -33,6 +31,6 @@ Gem::Specification.new do |spec|
     spec.add_dependency('archive-zip', '>= 0.7.0')
   else
     spec.files = candidates.delete_if { |item| item.include?('lib/mswin32') }
-    spec.extensions << 'ext/extconf.rb'
+    spec.extensions = %w(ext/extconf.rb)
   end
 end
